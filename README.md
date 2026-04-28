@@ -1,6 +1,6 @@
 # Agentic Support System (Orchestrator + Specialized Agents)
 
-This repository implements the assessment prompt in [`CANDIDATE TASK DOCUMENT.txt`](CANDIDATE TASK DOCUMENT.txt): an **agentic AI system** where an **orchestrator** routes customer queries to specialized agents for:
+This repository implements  an **agentic AI system** where an **orchestrator** routes customer queries to specialized agents for:
 
 - Order tracking
 - Refund processing (**guardrail: auto-approve only up to $75**)

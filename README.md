@@ -119,19 +119,19 @@ sequenceDiagram
   participant Tools
   participant Events
 
-  Client->>API: POST_/query
+  Client->>API: POST /query
   API->>Events: orchestrator_input
-  Api --> Orchestrator["Orchestrator (LangGraph)"]
-  Orchestrator->>Events: tool_call(gemini_route)
-  Orchestrator->>Gemini: route(message)->JSON
+  API->>Orchestrator: handle session_id, message, customer
+  Orchestrator->>Events: tool_call gemini_route
+  Orchestrator->>Gemini: route message to JSON
   Orchestrator->>Events: orchestrator_decision
   alt Refund_over_limit
-    Orchestrator->>Events: guardrail_violation(refund_limit)
+    Orchestrator->>Events: guardrail_violation refund_limit
     Orchestrator->>Tools: create_human_ticket
-    Orchestrator->>Gemini: gemini_respond(escalation)
+    Orchestrator->>Gemini: gemini_respond escalation
   else Normal_path
     Orchestrator->>Tools: domain_tools
-    Orchestrator->>Gemini: gemini_respond(final_response)
+    Orchestrator->>Gemini: gemini_respond final_response
   end
   API-->>Client: JSON_response
 ```

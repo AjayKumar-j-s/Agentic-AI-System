@@ -1,0 +1,10 @@
+{
+  "session_id": "session_alpha_001",
+  "customer_id": "cust_10283",
+  "message": "I want a refund for my last order right now, please give me USD 100 back.",
+  "customer": {
+    "name": "Alice Smith",
+    "email": "alice.smith@example.com",
+    "last_order_id": "ORDER12345"
+  }
+}

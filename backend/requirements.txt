@@ -1,0 +1,12 @@
+fastapi
+uvicorn[standard]
+pydantic
+python-dotenv
+langgraph
+google-genai
+sqlalchemy
+psycopg[binary]
+opentelemetry-api
+opentelemetry-sdk
+opentelemetry-instrumentation-fastapi
+opentelemetry-exporter-otlp

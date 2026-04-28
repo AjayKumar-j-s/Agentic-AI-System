@@ -121,7 +121,7 @@ sequenceDiagram
 
   Client->>API: POST_/query
   API->>Events: orchestrator_input
-  API->>Orchestrator: handle(session_id,message,customer)
+  Api --> Orchestrator["Orchestrator (LangGraph)"]
   Orchestrator->>Events: tool_call(gemini_route)
   Orchestrator->>Gemini: route(message)->JSON
   Orchestrator->>Events: orchestrator_decision

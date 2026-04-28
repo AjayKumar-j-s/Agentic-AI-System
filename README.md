@@ -150,15 +150,15 @@ Expected behavior: the refund amount is **above $75**, so the system **blocks** 
 
 ```mermaid
 flowchart TD
-  Client[Client] --> Api[FastAPI_/query]
-  Api --> Orchestrator[Orchestrator_(LangGraph)]
+  Client[Client] --> Api["FastAPI /query"]
+  Api --> Orchestrator["Orchestrator (LangGraph)"]
   Orchestrator -->|route| OrderTrackingAgent[OrderTrackingAgent]
   Orchestrator -->|route| RefundAgent[RefundAgent]
   Orchestrator -->|route| FAQAgent[FAQAgent]
   Orchestrator -->|route| HumanEscalationAgent[HumanEscalationAgent]
   Orchestrator --> Events[EventsService]
-  Events --> SSE[/events/stream_(SSE)]
-  Events --> DB[(DB_events_table)]
+  Events --> SSE["/events/stream (SSE)"]
+  Events --> DB[("DB events table")]
 ```
 
 ## Testing
